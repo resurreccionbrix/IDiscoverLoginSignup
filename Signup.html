@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+	<meta name = "viewport" content = "with=device-width, initial-scale=1.0">
+	<title> SignUp </title>
+	<link rel="stylesheet" href = "style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/d59f3c2691.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class="row">
+		<div class="form">
+			<h1>SignUp</h1>
+			<form action = "signupprocess.php" method = "POST">
+				<div class = "inputBox">
+					<input type = "text" id = "name" name = "name" placeholder="FIRST NAME" required>
+				</div>
+				<div class = "inputBox">
+					<input type = "text" id = "lastname" name = "lastname" placeholder="LAST NAME" required>
+				</div>
+				<div class = "inputBox">
+					<input type = "text" id = "username" name = "username" placeholder="USERNAME" required>
+				</div>
+				<div class = "inputBox">
+					<input type = "password" id = "password" name = "password" placeholder="PASSWORD" required>
+				</div>
+				<p><input type = "submit" id = "btn" value = "Create Account"/></p>
+			</form>
+		</div>
+		<div class="form-pic">
+			<img src="oo.png">
+		</div>
+	</div>
+</body>
+
+</html>
