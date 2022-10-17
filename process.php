@@ -1,22 +1,24 @@
 <?php
-    $username = $_POST['user'];
-    $password = $_POST['pass'];
+    
+session_start();
 
-    $username = stripcslashes($username);
-    $password = stripcslashes($password);
-    $username = mysql_real_escape_string($username);
-    $password = mysql_real_escape_string($password);
+$con = mysqli_connect('localhost','root', 'password');
 
-    mysql_connect("localhost", "root","password");
-    mysql_select_db("idiscover");
+mysqli_select_db($con, 'idiscover');
 
-    $result = mysql_query("select * from users where username='$username' and password='$password'") or die ("failed to query database". mysql_error());
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-    $row = mysql_fetch_array($result);
+$s = "select * from users where username = '$username' && password = '$password'";
 
-    if ($row['username'] == $username && $row['password'] == $password){
-        echo "Login Success! Welcome ". $row['username'];
-    }else{
-        scho "Failed";
-    }
+$result = mysqli_query($con, $s);
+
+$num = mysqli_num_rows($result);
+
+if($num == 1){
+    header('location:loginsuccess.html');
+}
+else{
+    header('location:loginfailed.html');
+}
 ?>
